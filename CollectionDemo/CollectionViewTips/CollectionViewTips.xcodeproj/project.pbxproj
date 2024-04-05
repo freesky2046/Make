@@ -60,7 +60,7 @@
 		68B975D32BBFFDBD0050FD93 /* CollectionViewTips */ = {
 			isa = PBXGroup;
 			children = (
-				68B975EA2BBFFF720050FD93 /* CustomHeaderPage */,
+				68B975EA2BBFFF720050FD93 /* Header&&Footer */,
 				68B975D42BBFFDBD0050FD93 /* AppDelegate.swift */,
 				68B975D62BBFFDBD0050FD93 /* SceneDelegate.swift */,
 				68B975D82BBFFDBD0050FD93 /* ViewController.swift */,
@@ -72,13 +72,13 @@
 			path = CollectionViewTips;
 			sourceTree = "<group>";
 		};
-		68B975EA2BBFFF720050FD93 /* CustomHeaderPage */ = {
+		68B975EA2BBFFF720050FD93 /* Header&&Footer */ = {
 			isa = PBXGroup;
 			children = (
 				68B975E82BBFFF0F0050FD93 /* CustomHeaderViewController.swift */,
 				68B975EB2BC0001F0050FD93 /* HeaderView.swift */,
 			);
-			path = CustomHeaderPage;
+			path = "Header&&Footer";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

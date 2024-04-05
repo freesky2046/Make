@@ -7,6 +7,12 @@
 
 import UIKit
 
+// 定义
 class HeaderView: UICollectionReusableView {
         
+}
+
+// 定义
+class FooterView : UICollectionReusableView {
+    
 }
