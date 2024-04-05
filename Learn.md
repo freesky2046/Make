@@ -2,7 +2,6 @@
 https://www.delasign.com/blog/swift-carousel/
 
 
-
 ### 2.collectionview 
 
 **复杂布局**
@@ -13,7 +12,9 @@ https://betterprogramming.pub/ios-13-compositional-layouts-in-collectionview-90a
 
 ##### 瀑布流
 
-
-
 ### 3.缓存
+
+### 4.gitbook
+
+
 
