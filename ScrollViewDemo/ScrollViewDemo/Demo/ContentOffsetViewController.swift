@@ -27,6 +27,7 @@ class ContentOffsetViewController: UIViewController, UIScrollViewDelegate {
         let blueView = UIView(frame: CGRectMake(0, 200, UIScreen.main.bounds.size.width, 200))
         blueView.backgroundColor = .blue
         scrollView.addSubview(blueView)
+        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.size.width, height: 400)
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

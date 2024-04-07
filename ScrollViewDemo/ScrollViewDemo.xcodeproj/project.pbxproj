@@ -60,7 +60,7 @@
 		68B9761B2BC069D00050FD93 /* ScrollViewDemo */ = {
 			isa = PBXGroup;
 			children = (
-				68B976302BC17BA90050FD93 /* ContentOffset */,
+				68B976302BC17BA90050FD93 /* Demo */,
 				68B9761C2BC069D00050FD93 /* AppDelegate.swift */,
 				68B9761E2BC069D00050FD93 /* SceneDelegate.swift */,
 				68B976202BC069D00050FD93 /* ViewController.swift */,
@@ -72,13 +72,13 @@
 			path = ScrollViewDemo;
 			sourceTree = "<group>";
 		};
-		68B976302BC17BA90050FD93 /* ContentOffset */ = {
+		68B976302BC17BA90050FD93 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
 				68B976312BC2F28D0050FD93 /* ContentOffsetViewController.swift */,
 				68B976332BC2F5730050FD93 /* ContentInstViewController.swift */,
 			);
-			path = ContentOffset;
+			path = Demo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
