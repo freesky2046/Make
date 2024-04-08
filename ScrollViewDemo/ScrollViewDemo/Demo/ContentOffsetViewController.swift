@@ -34,6 +34,4 @@ class ContentOffsetViewController: UIViewController, UIScrollViewDelegate {
         print("bounds:" + "\(scrollView.bounds)")
         print("contentOffset:" + "\(scrollView.contentOffset)")
     }
-
-
 }
