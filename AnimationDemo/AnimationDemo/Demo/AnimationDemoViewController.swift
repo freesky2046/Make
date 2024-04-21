@@ -23,11 +23,19 @@ class AnimationDemoViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        UIView.animate(withDuration: 3, delay: 0, options: [.repeat, .autoreverse]) { [weak self] in
-            self?.redView.frame = CGRect(x: 0, y: 188, width: 44, height: 44)
-        }
-    
+        
+        addBasicAnimation()
+        
 
+    }
+    
+    private func addBasicAnimation() {
+        let basicAnimation = CABasicAnimation(keyPath: "position.y")
+        basicAnimation.fromValue = 88 + 44.0 / 2
+        basicAnimation.toValue = 200.0
+        basicAnimation.duration = 1.0
+        basicAnimation.timingFunction = CAMediaTimingFunction(name: .easeIn)
+        redView.layer.add(basicAnimation, forKey: "")
     }
     
     

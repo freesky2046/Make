@@ -11,7 +11,7 @@ class ViewController: UIViewController {
     
     let dataList:[String] = [
         "basic animation",
-        "key frame animation",
+        
     ]
     
     lazy var tableView:UITableView = {
@@ -33,14 +33,10 @@ extension ViewController : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
-            let dest = AnimationDemoViewController()
+            let dest = ChainViewController()
             self.navigationController?.pushViewController(dest, animated: true)
         }
-        if indexPath.row == 1 {
-            let dest = CAAnimationDemoViewController()
-            self.navigationController?.pushViewController(dest, animated: true)
-
-        }
+     
 
     }
 }
