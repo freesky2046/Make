@@ -12,20 +12,19 @@ let footerReuseIdentifier = "footer"
 
 class CustomHeaderViewController: UIViewController {
     
-
-    
     lazy var collectionView:UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.minimumLineSpacing = 0.0
         layout.minimumInteritemSpacing = 0.0
-        layout.itemSize = CGSize(width: (UIScreen.main.bounds.size.width / 4), height: 88)
+        layout.itemSize = CGSize(width: ((UIScreen.main.bounds.size.width - 10 - 10) / 4.0), height: 88)
         let collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: layout)
         collectionView.contentInsetAdjustmentBehavior = .never
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         
         /// 注册
         collectionView.register(HeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerReuseIdentifier)
+//        collectionView.contentInset = UIEdgeInsets(top: 20, left: 20, bottom:20, right: 20)
         collectionView.register(FooterView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: footerReuseIdentifier)
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -54,6 +53,10 @@ extension CustomHeaderViewController : UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
         CGSize(width: UIScreen.main.bounds.size.width, height: 40)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
 }
 
