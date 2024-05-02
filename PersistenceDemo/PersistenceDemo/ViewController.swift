@@ -10,7 +10,8 @@ import UIKit
 class ViewController: UIViewController {
     var list:[String] = [
         "userDefault",
-        "nskeyedarchiver vs jsencoder",
+        "nskeyedarchiver",
+        "jsencoder",
         "write(to:options:)"
     ]
     
@@ -50,6 +51,16 @@ extension ViewController: UITableViewDelegate {
         if indexPath.row == 0 {
             let defaultViewController: UserDefaultViewController = UserDefaultViewController()
             navigationController?.pushViewController(defaultViewController, animated: true)
+        }
+        
+        if indexPath.row == 1 {
+            let keyedArchiveViewController: KeyedarchiverViewController = KeyedarchiverViewController()
+            navigationController?.pushViewController(keyedArchiveViewController, animated: true)
+        }
+        
+        if indexPath.row == 2 {
+            let jsonEncoderViewController: JSONEncoderViewController = JSONEncoderViewController()
+            navigationController?.pushViewController(jsonEncoderViewController, animated: true)
         }
     }
     
