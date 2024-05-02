@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     var list:[String] = [
         "userDefault",
-        "nskeyedarchiver",
+        "nskeyedarchiver vs jsencoder",
         "write(to:options:)"
     ]
     
@@ -39,13 +39,19 @@ class ViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         tableView.frame = view.safeAreaLayoutGuide.layoutFrame
-        
-
+    
     }
     
 }
 
 extension ViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            let defaultViewController: UserDefaultViewController = UserDefaultViewController()
+            navigationController?.pushViewController(defaultViewController, animated: true)
+        }
+    }
     
 }
 
