@@ -7,6 +7,7 @@
 
 import UIKit
 
+// 同步提交到并行队列
 class ThreeViewController: UIViewController {
 
     override func viewDidLoad() {

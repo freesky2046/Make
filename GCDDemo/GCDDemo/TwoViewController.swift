@@ -7,6 +7,7 @@
 
 import UIKit
 
+// 同步提交到串行队列
 class TwoViewController: UIViewController {
 
 

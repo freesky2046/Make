@@ -13,9 +13,9 @@ class ViewController: UIViewController {
         "2 同步提交任务到自定义串行队列",
         "3 同步提交任务到并行队列"],
         
-        ["4 主线程异步主队列",
-        "5  异步提交到串行队列",
-        "6  异步提交到并行队列（自定义或预置）"],
+        ["4主线程(或非主线程上)异步提交任务到主队列",
+        "5 异步提交到串行队列",
+        "6 异步提交到并行队列（自定义或预置）"],
     ]
     
     
@@ -61,6 +61,20 @@ extension ViewController: UITableViewDelegate {
             if indexPath.row == 2 {
                 let three = ThreeViewController()
                 navigationController?.pushViewController(three, animated: true)
+            }
+            
+
+        }
+        
+        if indexPath.section == 1 {
+            if indexPath.row == 0 {
+                let four = FourViewController()
+                navigationController?.pushViewController(four, animated: true)
+            }
+
+            if indexPath.row == 1 {
+                let fifth = FifthViewController()
+                navigationController?.pushViewController(fifth, animated: true)
             }
         }
     }

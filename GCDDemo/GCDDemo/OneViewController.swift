@@ -7,6 +7,7 @@
 
 import UIKit
 
+// 同步提交到主队列（主线程上提交或非主线程上提交）
 class OneViewController: UIViewController {
 
     override func viewDidLoad() {
