@@ -9,10 +9,13 @@ import UIKit
 
 class ViewController: UIViewController {
     var list:[String] = [
-        "NSOperation概述",
-        "nskeyedarchiver",
-        "jsencoder",
-        "write(to:options:)"
+        "1 NSOperation分类",
+        "2 独立使用NSOperation",
+        "3 NSOperationQueue概述",
+        "4 系统的NSOperation结合NSOperationQueue",
+        "5 自定义的NSOperation结合NSOperationQueue",
+        "6 NSOperation依赖",
+        "7 NSOperation优先级"
     ]
     
     
@@ -49,18 +52,8 @@ extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
-            let defaultViewController: UserDefaultViewController = UserDefaultViewController()
-            navigationController?.pushViewController(defaultViewController, animated: true)
-        }
-        
-        if indexPath.row == 1 {
-            let keyedArchiveViewController: KeyedarchiverViewController = KeyedarchiverViewController()
-            navigationController?.pushViewController(keyedArchiveViewController, animated: true)
-        }
-        
-        if indexPath.row == 2 {
-            let jsonEncoderViewController: JSONEncoderViewController = JSONEncoderViewController()
-            navigationController?.pushViewController(jsonEncoderViewController, animated: true)
+            let operationViewController = NSOperationViewController()
+            navigationController?.pushViewController(operationViewController, animated: true)
         }
     }
     
@@ -72,7 +65,7 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) 
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = "\(list[indexPath.row])"
         return cell
     }
