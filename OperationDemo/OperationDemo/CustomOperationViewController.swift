@@ -41,7 +41,34 @@ class CustomOperationViewController: UIViewController {
 
     @objc
     func asyncOperation() {
+        print("开始异步:\(Thread.current)")
+        let asyncOperation1: AsyncOperation = AsyncOperation()
+        asyncOperation1.url = "https://pic.rmb.bdstatic.com/bjh/50ce04404059a838cd9ac88bde7b574b90.jpeg@h_1280"
+        let mainQueue = DispatchQueue.main
+        asyncOperation1.completionBlock = {
+            mainQueue.async {
+                print(asyncOperation1.image ?? nil)
+            }
+        }
         
+        let asyncOperation2: AsyncOperation = AsyncOperation()
+        asyncOperation2.url = "https://static.jstv.com/img/2022/8/16/20228161660621024748_187.jpeg"
+        asyncOperation2.completionBlock = {
+            mainQueue.async {
+                print(asyncOperation2.image ?? nil)
+            }
+        }
+        let asyncOperation3: AsyncOperation = AsyncOperation()
+        asyncOperation3.url = "https://static.jstv.com/img/2022/8/16/20228161660621024748_187.jpeg"
+        asyncOperation3.completionBlock = {
+            mainQueue.async {
+                print(asyncOperation3.image ?? nil)
+            }
+        }
+        print("停止异步")
+
+        let queue = OperationQueue()
+        queue.addOperations([asyncOperation1, asyncOperation2, asyncOperation3], waitUntilFinished: true)
     }
 
 }
