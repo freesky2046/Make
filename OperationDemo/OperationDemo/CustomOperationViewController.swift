@@ -11,19 +11,37 @@ class CustomOperationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .white
+        let stackView = UIStackView(frame: CGRect(x: 0, y: 88, width: UIScreen.main.bounds.size.width, height: 88))
+        view.addSubview(stackView)
+        stackView.axis = .vertical
+        stackView.spacing = 10
+        stackView.distribution = .fill
+        stackView.alignment = .fill
+        
+        stackView.addArrangedSubview(createButton(title: "同步", sel: #selector(syncOperation)))
+        stackView.addArrangedSubview(createButton(title: "异步", sel: #selector(asyncOperation)))
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func createButton(title: String, sel: Selector) -> UIButton {
+        let button = UIButton(type: .custom)
+        button.setTitle(title, for: .normal)
+        button.addTarget(self, action: sel, for: .touchUpInside)
+        button.setTitleColor(.blue, for: .normal)
+        return button
     }
-    */
+    
+    @objc
+    func syncOperation() {
+        let operation: SyncOperation = SyncOperation()
+        print("开始")
+        operation.start()
+        print("结束")
+    }
+
+    @objc
+    func asyncOperation() {
+        
+    }
 
 }

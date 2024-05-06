@@ -16,6 +16,7 @@
 		6828C4DE2BE3BB8600F21249 /* OperationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6828C4DD2BE3BB8600F21249 /* OperationViewController.swift */; };
 		68EA75F92BE7E4AB00073B0C /* CustomOperationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EA75F82BE7E4AB00073B0C /* CustomOperationViewController.swift */; };
 		68EA75FB2BE7E4BD00073B0C /* SoloUseOperatoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EA75FA2BE7E4BD00073B0C /* SoloUseOperatoinViewController.swift */; };
+		68EA75FD2BE9190D00073B0C /* SyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EA75FC2BE9190D00073B0C /* SyncOperation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		6828C4DD2BE3BB8600F21249 /* OperationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationViewController.swift; sourceTree = "<group>"; };
 		68EA75F82BE7E4AB00073B0C /* CustomOperationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomOperationViewController.swift; sourceTree = "<group>"; };
 		68EA75FA2BE7E4BD00073B0C /* SoloUseOperatoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoloUseOperatoinViewController.swift; sourceTree = "<group>"; };
+		68EA75FC2BE9190D00073B0C /* SyncOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncOperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				68EA75FA2BE7E4BD00073B0C /* SoloUseOperatoinViewController.swift */,
+				68EA75FC2BE9190D00073B0C /* SyncOperation.swift */,
 				68EA75F82BE7E4AB00073B0C /* CustomOperationViewController.swift */,
 				6828C4DD2BE3BB8600F21249 /* OperationViewController.swift */,
 				6828C4C92BE3B90D00F21249 /* AppDelegate.swift */,
@@ -148,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6828C4CE2BE3B90D00F21249 /* ViewController.swift in Sources */,
+				68EA75FD2BE9190D00073B0C /* SyncOperation.swift in Sources */,
 				68EA75FB2BE7E4BD00073B0C /* SoloUseOperatoinViewController.swift in Sources */,
 				68EA75F92BE7E4AB00073B0C /* CustomOperationViewController.swift in Sources */,
 				6828C4CA2BE3B90D00F21249 /* AppDelegate.swift in Sources */,

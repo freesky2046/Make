@@ -52,7 +52,8 @@ extension ViewController: UITableViewDelegate {
             navigationController?.pushViewController(operationViewController, animated: true)
         }
         if indexPath.row == 1 {
-            
+            let customOperaViewController = CustomOperationViewController()
+            navigationController?.pushViewController(customOperaViewController, animated: true)
         }
         
         if indexPath.row == 2 {
