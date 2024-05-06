@@ -9,13 +9,9 @@ import UIKit
 
 class ViewController: UIViewController {
     var list:[String] = [
-        "1 NSOperation分类",
-        "2 独立使用NSOperation",
-        "3 NSOperationQueue概述",
-        "4 系统的NSOperation结合NSOperationQueue",
-        "5 自定义的NSOperation结合NSOperationQueue",
-        "6 NSOperation依赖",
-        "7 NSOperation优先级"
+        "1 Operation概述",
+        "2 子类化Operation",
+        "3 单独使用Operation"
     ]
     
     
@@ -52,8 +48,16 @@ extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
-            let operationViewController = NSOperationViewController()
+            let operationViewController = OperationViewController()
             navigationController?.pushViewController(operationViewController, animated: true)
+        }
+        if indexPath.row == 1 {
+            
+        }
+        
+        if indexPath.row == 2 {
+            let soloUse = SoloUseOperatoinViewController()
+            navigationController?.pushViewController(soloUse, animated: true)
         }
     }
     

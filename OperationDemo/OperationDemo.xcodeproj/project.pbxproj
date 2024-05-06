@@ -13,7 +13,9 @@
 		6828C4D12BE3B90D00F21249 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 6828C4D02BE3B90D00F21249 /* Base */; };
 		6828C4D32BE3B90F00F21249 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6828C4D22BE3B90F00F21249 /* Assets.xcassets */; };
 		6828C4D62BE3B90F00F21249 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 6828C4D52BE3B90F00F21249 /* Base */; };
-		6828C4DE2BE3BB8600F21249 /* NSOperationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6828C4DD2BE3BB8600F21249 /* NSOperationViewController.swift */; };
+		6828C4DE2BE3BB8600F21249 /* OperationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6828C4DD2BE3BB8600F21249 /* OperationViewController.swift */; };
+		68EA75F92BE7E4AB00073B0C /* CustomOperationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EA75F82BE7E4AB00073B0C /* CustomOperationViewController.swift */; };
+		68EA75FB2BE7E4BD00073B0C /* SoloUseOperatoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EA75FA2BE7E4BD00073B0C /* SoloUseOperatoinViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +27,9 @@
 		6828C4D22BE3B90F00F21249 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6828C4D52BE3B90F00F21249 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6828C4D72BE3B90F00F21249 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6828C4DD2BE3BB8600F21249 /* NSOperationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSOperationViewController.swift; sourceTree = "<group>"; };
+		6828C4DD2BE3BB8600F21249 /* OperationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationViewController.swift; sourceTree = "<group>"; };
+		68EA75F82BE7E4AB00073B0C /* CustomOperationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomOperationViewController.swift; sourceTree = "<group>"; };
+		68EA75FA2BE7E4BD00073B0C /* SoloUseOperatoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoloUseOperatoinViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +62,9 @@
 		6828C4C82BE3B90D00F21249 /* OperationDemo */ = {
 			isa = PBXGroup;
 			children = (
-				6828C4DD2BE3BB8600F21249 /* NSOperationViewController.swift */,
+				68EA75FA2BE7E4BD00073B0C /* SoloUseOperatoinViewController.swift */,
+				68EA75F82BE7E4AB00073B0C /* CustomOperationViewController.swift */,
+				6828C4DD2BE3BB8600F21249 /* OperationViewController.swift */,
 				6828C4C92BE3B90D00F21249 /* AppDelegate.swift */,
 				6828C4CB2BE3B90D00F21249 /* SceneDelegate.swift */,
 				6828C4CD2BE3B90D00F21249 /* ViewController.swift */,
@@ -142,9 +148,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6828C4CE2BE3B90D00F21249 /* ViewController.swift in Sources */,
+				68EA75FB2BE7E4BD00073B0C /* SoloUseOperatoinViewController.swift in Sources */,
+				68EA75F92BE7E4AB00073B0C /* CustomOperationViewController.swift in Sources */,
 				6828C4CA2BE3B90D00F21249 /* AppDelegate.swift in Sources */,
 				6828C4CC2BE3B90D00F21249 /* SceneDelegate.swift in Sources */,
-				6828C4DE2BE3BB8600F21249 /* NSOperationViewController.swift in Sources */,
+				6828C4DE2BE3BB8600F21249 /* OperationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

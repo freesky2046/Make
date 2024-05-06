@@ -76,6 +76,11 @@ extension ViewController: UITableViewDelegate {
                 let fifth = FifthViewController()
                 navigationController?.pushViewController(fifth, animated: true)
             }
+            
+            if indexPath.row == 2 {
+                let six = SixViewController()
+                navigationController?.pushViewController(six, animated: true)
+            }
         }
     }
     
