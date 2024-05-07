@@ -14,7 +14,7 @@ class SyncOperation: Operation {
             return
         }
         for i in 0..<1000 {
-            print("\(i * 2)")
+//            print("\(i * 2)")
         }
         print(" 执行完毕")
     }

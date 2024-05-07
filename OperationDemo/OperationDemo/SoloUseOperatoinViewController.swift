@@ -22,7 +22,8 @@ class SoloUseOperatoinViewController: UIViewController {
         
         stackView.addArrangedSubview(createButton(title: "block 添加一次操作", action: #selector(useBlockOperation)))
         stackView.addArrangedSubview(createButton(title: "block 添加多次操作", action: #selector(useBlockAddOperation)))
-        stackView.addArrangedSubview(createButton(title: "自定义 operation", action: #selector(useCustomOperation)))
+        stackView.addArrangedSubview(createButton(title: "自定义 串行operation", action: #selector(useSyncOperation)))
+        stackView.addArrangedSubview(createButton(title: "自定义 并行operation", action: #selector(useASyncOperation)))
         
     }
     
@@ -67,13 +68,26 @@ class SoloUseOperatoinViewController: UIViewController {
     }
     
     @objc
-    func useCustomOperation() {
+    func useSyncOperation() {
         print("使用前\(Thread.current)")
-        let blockOperation = BlockOperation {
-            self.mockTimeOperation()
-            print("单独使用 blockOperation\(Thread.current)")
+        let syncOperation: SyncOperation = SyncOperation()
+        syncOperation.start()
+        
+        print("使用后")
+    }
+    
+    @objc
+    func useASyncOperation() {
+        print("使用前\(Thread.current)")
+        let asyncOperation1: AsyncOperation = AsyncOperation()
+        asyncOperation1.url = "https://pic.rmb.bdstatic.com/bjh/50ce04404059a838cd9ac88bde7b574b90.jpeg@h_1280"
+        let mainQueue = DispatchQueue.main
+        asyncOperation1.completionBlock = {
+            mainQueue.async {
+                print(asyncOperation1.image ?? nil)
+            }
         }
-        blockOperation.start()
+        asyncOperation1.start()
         print("使用后")
     }
     

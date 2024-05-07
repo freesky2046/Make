@@ -48,15 +48,18 @@ extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
+            // 分类
             let operationViewController = OperationViewController()
             navigationController?.pushViewController(operationViewController, animated: true)
         }
         if indexPath.row == 1 {
+            // 自定义
             let customOperaViewController = CustomOperationViewController()
             navigationController?.pushViewController(customOperaViewController, animated: true)
         }
         
         if indexPath.row == 2 {
+            // 单独
             let soloUse = SoloUseOperatoinViewController()
             navigationController?.pushViewController(soloUse, animated: true)
         }
