@@ -31,7 +31,7 @@ class ViewController: UIViewController {
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: #selector(appDidEnterBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(didBecomeActiveNotification), name: UIApplication.didBecomeActiveNotification, object: nil)
         view.addSubview(tableView)
         for i in 0..<100 {
             dataList.append("\(i)")
@@ -47,8 +47,9 @@ class ViewController: UIViewController {
         }
     }
     
-    @objc func appDidEnterBackground() {
-        if isScrolling { // 此时还在滑动中，证明没有正确调用结束方法
+    @objc func didBecomeActiveNotification() {
+        let selfIsCurrent: Bool = true /// 这里还有一段逻辑，当前视图控制器是自己
+        if isScrolling && selfIsCurrent { // 此时还在滑动中，证明没有正确调用结束方法
             scrollEnd() // 补充遗漏的滑动结束
             isScrolling = false
         }
@@ -106,4 +107,5 @@ extension ViewController : UITableViewDataSource {
         return cell
     }
 }
+
 
