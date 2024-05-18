@@ -40,7 +40,6 @@ class SessionDelegateViewController: UIViewController {
         let request = URLRequest(url: Self.url)
         // 方式 1
         let configuration = URLSessionConfiguration.default
-        
         let session = URLSession(configuration: configuration, delegate: self, delegateQueue: OperationQueue.main)
         let task = session.dataTask(with: request) { data, response, error in
             guard let data = data else { return  }
@@ -55,31 +54,14 @@ class SessionDelegateViewController: UIViewController {
             DispatchQueue.main.async {
                 self.label.text = string
             }
-
         }
-//        let session = URLSession.shared
-//        session.delegate = self
-//        let task = session.dataTask(with: request) { data, response, error in
-//            guard let data = data else { return  }
-//            /// 转为对象
-//            let decoder = JSONDecoder()
-//            let res = try? decoder.decode(Response.self, from: data)
-//            print("😄" + "code:\(res?.code ?? 0)")
-//            print("😄" + "msg:\(res?.msg ?? "")")
-//            
-//            /// 转为 json 字符串
-//            let string = String(data: data, encoding: .utf8)
-//            DispatchQueue.main.async {
-//                self.label.text = string
-//            }
-//            
-//        }
-//        session.invalidateAndCancel()
-
         task.resume()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+            session.invalidateAndCancel()
+        }
     }
     
-    // 2.URLSessionDownloadTask:下载到临时目录
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -93,17 +75,10 @@ extension SessionDelegateViewController: URLSessionDelegate {
     func urlSession(_ session: URLSession, didBecomeInvalidWithError error: (any Error)?) {
         print("😄" + "didBecomeInvalidWithError:\(String(describing: error))")
     }
-
     
     func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping @Sendable (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
         print("😄" + "didReceive:\(challenge)")
-
     }
-
-//    func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge) async -> (URLSession.AuthChallengeDisposition, URLCredential?) {
-//        print("😄" + "didReceive:\(challenge)")
-//    }
-
     
     @available(iOS 7.0, *)
     func urlSessionDidFinishEvents(forBackgroundURLSession session: URLSession) {
