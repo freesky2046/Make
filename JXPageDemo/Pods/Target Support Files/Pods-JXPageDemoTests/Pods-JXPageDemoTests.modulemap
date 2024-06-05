@@ -1,0 +1,6 @@
+framework module Pods_JXPageDemoTests {
+  umbrella header "Pods-JXPageDemoTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

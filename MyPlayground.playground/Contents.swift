@@ -1,43 +1,35 @@
 import UIKit
 
+var greeting = "Hello, playground"
 
 
-
-class ImageInfo : Codable {
-    var w: CGFloat = 0.0
-    var h: CGFloat = 0.0
-    var fileName: String = "123"
+class PersonalMuseumItem: Codable {
+    var exhId: String?    // 展览 id
+    var exhImg: String?  // 展览图片
+    var exhName: String? // 展览名称
+    var exhSort: Int? // 展览位置
+    var jumpUrl: String? // 跳转链接
     
-    func encodeToDictionary() -> [String: Any]? {
-        
-       guard let data = try? encodeToData() else {
-           return nil
-       }
-       
-       return try? JSONSerialization.jsonObject(with: data, options: .mutableLeaves) as? [String: Any]
-   }
-    
-    
-    func encodeToDict() -> [String: Any]? {
-        
-       guard let data = try? encodeToData() else {
-           return nil
-       }
-      let decoder = JSONDecoder()
-     let  dict = try? decoder.decode([String: Any], from: data)
-      return dict
-   }
-    
-    public func encodeToData() throws -> Data {
-        let ecd = JSONEncoder()
-        ecd.outputFormatting = .prettyPrinted
-        return try ecd.encode(self)
+    var isEmpty: Bool  {
+        if let exhId = self.exhId {
+           return exhId.isEmpty || exhId == "0"
+        }
+        else {
+            return true
+        }
     }
 }
 
+var item1 = PersonalMuseumItem()
+item1.exhId = "1"
 
-let info = ImageInfo()
-let result = info.encodeToDictionary()
-let result2 = info.encodeToDict()
+var item2 = PersonalMuseumItem()
+item2.exhId = "2"
+
+var list = [item1, item2]
+var item3 = list[0]
+item3.exhId = "3"
+
+print(item1.exhId)
 
 
